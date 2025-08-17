@@ -1,15 +1,13 @@
-# co-ListBuddy-Pro
-an airbnb co-listing application
-# Co-ListBuddy Pro
+# co-ListBuddy-Pro (Firebase stubs)
 
-Android-first app for STR comps and profit estimates, with tiered subscriptions.
+This version adds **Firebase stubs** for Authentication and Firestore sync.
 
-## Stack
-- **Mobile**: Android (Kotlin, Jetpack Compose, Google Play Billing)
-- **Backend**: FastAPI, optional Mongo/Redis (docker-compose)
-
-## Run the API
-```bash
-cd server
-docker compose up --build
-# API on http://localhost:8000
+## Instructions
+1. Create a Firebase project.
+2. Enable **Authentication** (Email/Password + Google sign-in).
+3. Enable **Cloud Firestore**.
+4. Download `google-services.json` and place it in `app/`.
+5. App code includes:
+   - `AuthRepository.kt` for sign-in/register/logout.
+   - `FirestoreSync.kt` for listing sync (call from `ListingsViewModel` after local insert/update/delete).
+6. Build the app in Android Studio; ensure the Firebase plugin is applied and KAPT is enabled.
